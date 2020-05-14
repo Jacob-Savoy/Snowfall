@@ -1,0 +1,48 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>GEOG575 - Lab1</title>
+        
+		<link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/leaflet.css"/>
+        <link rel="points" type="application/json" href="data/MegaCities.geojson">
+        
+        
+        <script type="text/javascript" src="lib/jquery-1.11.3.js">
+        </script>        
+        <script type="text/javascript" src="lib/leaflet-src.js">
+        </script>
+        <script type="text/javascript" src="js/main.js">
+        </script>
+        <script type="text/javascript" src="js/geojson.js">
+        </script>
+        
+	</head>
+    
+    <body>
+        
+        <div id="map"> </div>
+        <div id="panel"></div>
+        <div class='leaflet control container'>
+            <div class='leaflet control'>
+                <a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out"></a>
+                <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in"></a>
+            </div>
+        </div> 
+        <div id="MegaCities"></div>
+        
+        <script>
+           var map = L.map('map').setView([39.75621, -105], 13);
+           L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery   <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 3,
+            id: 'mapbox.mapbox-streets-v4',
+            accessToken: 'pk.eyJ1Ijoic2F2b3kzIiwiYSI6ImNqa2RnZDQydjQxeDkzeG50dDFhMWJscjMifQ.55gczppdmKdOeRbY9feClg'
+               
+           }).addTo(map);
+            
+        </script>
+        
+    </body>
+</html>
